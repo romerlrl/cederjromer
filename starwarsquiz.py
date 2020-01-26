@@ -35,7 +35,7 @@ mapa =      [
 			("Você pode dançar enquanto é apertado pelo pescoço?",7, 8, 9),
 
 		#05	
-			("Sem problemas, a Força... e calmantes são fortes na minha família", 32,
+			("Sem problemas, a Força... e calmantes são fortes na minha família", 32),
 
 		#06	
 			("Prefiro tocar dongo para o Jabba", 12),
@@ -47,7 +47,7 @@ mapa =      [
 			("Essa pergunta me fez me sentir sujo e barato", 29),
 
 		#09	
-			("Eu chamo isso de uma terça feira típica", 33)
+			("Eu chamo isso de uma terça feira típica", 33), 
 
 		#10	
 			("Sim|O que você faria se Jar Jar começasse a forçar intimidade?", 17, 16),
@@ -119,7 +119,7 @@ mapa =      [
                         ("Você sofre com uma sede imensa de poder?", 10, 11),
 
                 #33
-                        ("Você se opõe a se vestir com lingerie espacial?", 14, 15),
+                        ("Você se opõe a se vestir com lingerie espacial?", 14, 15)
 ]                                                
 
 abrequestao(mapa[0], mapa)
