@@ -1,5 +1,8 @@
 import time
 
+def RemoveCPF(string):
+    ind=string.find(',')+1
+    return string[ind:]
 
 def ComDicionario():
     universo=open('lista20k.csv', 'r', encoding='utf-8')
@@ -13,7 +16,7 @@ def ComDicionario():
     for k in selecao:
         dicio[k]=False
     for k, v in dicio.items():
-        if v: saida.write(k)
+        if v: saida.write(RemoveCPF(k))
     saida.close()
     universo.close()
     selecao.close()
@@ -30,7 +33,7 @@ def ComConjunto():
     set_invertido=set_universo-set_selecao
     lista=list(set_invertido)
     for item in lista:
-        saida.write(item)
+        saida.write(RemoveCPF(item))
     saida.close()
     universo.close()
     selecao.close()
@@ -48,20 +51,20 @@ def ComListaOrdenada():
         if itemSelecao==itemUniverso:
             itemSelecao=selecao.readline()
         else:
-            saida.write(itemUniverso)
+            saida.write(removeCPF(itemUniverso))
         itemUniverso=universo.readline()
     #print("OK")
 
     while itemUniverso!="29999,Trellis":
         itemUniverso=universo.readline()
-        saida.write(itemUniverso)
+        saida.write(RemoveCPF(itemUniverso))
     saida.close()
     universo.close()
     selecao.close()
 
 def ComListaNaoOrdenada():
     def SeNao(foo):
-        for j in selecao2:
+        for j in lista_selecao:
             if j==foo: return False
         saida.write(foo)
 
@@ -75,11 +78,12 @@ def ComListaNaoOrdenada():
     objetivo='saida-metodo-lista-nao-ordenada.txt'
     saida=open(objetivo, 'w', encoding='utf-8')
     print("Ok")
-    selecao2=selecao.readlines()
-    for k in xrange(20000):
+    lista_selecao=selecao.readlines()
+    for k in range(20000):
         u=universo.readline()
-        uf=u[2:8]
-        SeNao(u)
+        if k not in lista_selecao:
+                    saida.write(RemoveCPF(k))
+        #SeNao(u)
     saida.close()
     universo.close()
     selecao.close()
