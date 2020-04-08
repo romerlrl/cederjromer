@@ -1,17 +1,5 @@
 import time
-import datetime
 
-
-def hora():
-    import time
-    hora = time.localtime(time.time())
-    hora=list(hora)
-    data=[str(x) for x in hora[:3:-1]]
-    data="/".join(data)
-    hora2=[str(x) for x in hora[3:6]]
-    hora2=":".join(hora2)
-    data+="  " + hora2
-    return data
 
 def ComDicionario():
     universo=open('lista20k.csv', 'r', encoding='utf-8')
@@ -109,18 +97,5 @@ def main(operacao):
         print(fim)
     print("-"*15)
     print(fim)
-    
-    '''
-    t= timeit.Timer("operacao", "from __main__ import operacao")
-    resultado.write(hora())
-    resultado.write(t.repeat())
-    
-    #diff=final-time
-    mysetup=str(operacao)
-    print (timeit.timeit(setup = mysetup, stmt = operacao, number = 100) )
-    
-    universo.close()
-    selecao.close()
-    resultado.close()
-    '''
+
 ordenado=[False]
