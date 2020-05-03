@@ -15,15 +15,36 @@ def Troca(x, y='', r=1, c=1):
         x['text']=y['text']
         y['text']=aux
     else:
+        aux=x['text']
         x['text']=str(y)
+        y=aux
     cont['o']+=c
-    if (r): log.append(('t', y, x))
+    if (r): log.append(('t', x, y))
     print(cont)
 
 #imprime o log de ações feitas.
+def printf(*args):
+    print(*args, end=' ')
+    
 def l():
-    for k in log: print(k)
+    for f in log:
+        LogToStr(f)
 
+def NomeDoObjeto(obj):
+    return 'A'+str(obj)[-1]
+   
+def LogToStr(k):
+    if True:   #Só para não corrigir a identação.
+        if k[0]=='t':
+            printf("Troca" )
+            printf(NomeDoObjeto(k[1]), k[1]['text'])
+            try:
+                printf(NomeDoObjeto(k[2]), k[2]['text'], '(obj)')
+            except:
+                printf(k[2], '(str)')
+        else:
+            printf('add')
+        print()
 #Remove a raiz da árvore para uma fila.
 def add():
     sort.append(A1['text'])
@@ -65,8 +86,8 @@ def show(no):
 
 #Reseta o programa
 def reset():
-    log=[]
     for k in range(len(lista1)): Troca(lista1[k], lista2[k], c=0)
+    log=[]
     cont={'o':0, 'pointer':8}
     sort=[]
     topo['text']=sort
