@@ -1,4 +1,12 @@
 from tkinter import *
+'''Por ser um recurso desenvolvido para dois exercícios específicos, 
+   o número de nós e suas posições são fixas, mas nada impede de 
+   desenhar novas linhas de altura com algumas linhas a mais de código
+   
+   É uma pseudoárvore já que apesar de aparentar ser um grafo, não existem
+   nós, são apenas label esteticamente organizadas sem nenhuma relação entre
+   si.
+'''
 #Troca os rótulos de dois nós ou adiciona uma string y ao nó x. 
 #As variáveis r e c são de controle interno, não há necessidade de mexer nelas
 def Troca(x, y='', r=1, c=1):
