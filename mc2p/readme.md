@@ -9,12 +9,12 @@ procedimento menorcaminho(pontos)
   vencedores←[]
   lebre←1
   tartaruga←0
-  distanciaMinima←∞
+  distancia←∞
   para tartaruga←0 até tamanho(pontos)
     lebre←tartaruga
     enquanto lebre<0
       corrida←pontos[lebre][0]-pontos[tartaruga][0]
-      se corrida>distanciaMinima
+      se corrida>distancia
         lebre←0
       senao
         corrida←hipotenusa(pontos[lebre][0],pontos[tartaruga][0])
