@@ -127,6 +127,7 @@ sort=[]
 topo=Label(janela, bg='yellow')
 topo.pack(fill=X)
 janela.geometry('300x300+800+200')
+janela.mainloop()
 
 lista1=[A1, A2, A3, A4, A5, A6, A7, A8, A9]
 lista2=[45, 34, 78, 90, 12, 57, 80, 56, 15]
